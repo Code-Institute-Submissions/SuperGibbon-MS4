@@ -6,17 +6,21 @@ body {
     height: calc(100vh - 164px);
     color:black;
     background-color: white;
-    font-family: 'Lato';
+    font-family: 'Nunito', sans-serif;
 }
 
 .home-main  {
-    margin-top: 100px;
     text-align: center;
 }
 
 .topnav-area {
     background-color: #5312d6;
     padding-top: 10px;
+}
+
+.dropdown-menu {
+    color: white !important;
+    background-color: #5312d6;
 }
 
 .nav-account-link {
@@ -41,17 +45,43 @@ body {
 }
 
 .home-title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .btn-purple {
     background-color: #5312d6;
     color: white;
     border: white;
-    border-radius: 1px;
+    border-radius: 5px;
 }
 
 .search-button {
     height: 100%;
     width: fit-content;
+    background-color: #5312d6;
+    color: white;
+}
+
+.btn-purple:hover,
+.btn-purple:active,
+.btn-purple:focus,
+.search-button:hover,
+.search-button:active,
+.search-button:focus {
+    background: #5312d6;
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .fixed-top-desktop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .home-main {
+        padding-top: 164px;
+    }
 }
