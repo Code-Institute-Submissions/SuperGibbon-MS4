@@ -1,0 +1,57 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100vh - 164px);
+    color:black;
+    background-color: white;
+    font-family: 'Lato';
+}
+
+.home-main  {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.topnav-area {
+    background-color: #5312d6;
+    padding-top: 10px;
+}
+
+.nav-account-link {
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.title-text {
+    color: #5312d6 !important; 
+}
+
+.logo-text  {
+    color: white !important;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.home-title {
+    margin-bottom: 50px;
+}
+
+.btn-purple {
+    background-color: #5312d6;
+    color: white;
+    border: white;
+    border-radius: 1px;
+}
+
+.search-button {
+    height: 100%;
+    width: fit-content;
+}
