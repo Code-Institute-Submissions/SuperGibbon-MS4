@@ -11,6 +11,7 @@ body {
 
 .home-main  {
     text-align: center;
+    padding-top: 164px;
 }
 
 .topnav-area {
@@ -18,9 +19,18 @@ body {
     padding-top: 10px;
 }
 
+.navbar {
+    background-color: #5312d6;
+}
+
 .dropdown-menu {
     color: white !important;
     background-color: #5312d6;
+}
+
+.mobile-search-bar {
+    position: absolute;
+    left: 0px;
 }
 
 .nav-account-link {
@@ -34,6 +44,10 @@ body {
 
 .logo-text  {
     color: white !important;
+}
+
+.bold-text {
+    font-weight: 700;
 }
 
 .uppercase-text {
@@ -79,9 +93,5 @@ body {
         right: 0;
         left: 0;
         z-index: 1030;
-    }
-
-    .home-main {
-        padding-top: 164px;
     }
 }

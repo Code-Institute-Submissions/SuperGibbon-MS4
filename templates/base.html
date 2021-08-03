@@ -48,7 +48,7 @@
                         <div class="input-group w-100">
                             <input class="form-control" type="text" name="q" placeholder="Search our guides">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-lg search-button" type="submit">
+                                <button class="form-control btn btn-lg search-button border border-1" type="submit">
                                     <span class="content-text">
                                         Search
                                     </span>
@@ -61,25 +61,34 @@
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="title-text nav-link nav-account-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
+                                <div class="text-center logo-text">
                                     <p class="logo-text">My Account <i class="fas fa-users"></i></p>
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="" class="dropdown-item">Guide Management</a>
+                                        <a href="" class="dropdown-item logo-text">Guide Management</a>
                                     {% endif %}
                                     <a href="" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item logo-text">Logout</a>
                                 {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item logo-text">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item logo-text">Login</a>
                                 {% endif %}
                             </div>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div class="row bg-white">
+                <nav class="navbar navbar-expand-lg navbar-light w-100">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
+                </nav>
             </div>
         </header>
         
