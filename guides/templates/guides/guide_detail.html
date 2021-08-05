@@ -30,7 +30,9 @@
             </div>
             <div class="col-12 col-sm-6 guide-details-container">
                 <div class="guide-detail">
-                    <small class="uppercase-text">{{ guide.category }}</small>
+                    <a href="{% url 'guides' %}?category={{ guide.category.name }}">
+                        <i class="fas fa-tag"></i><small class="card-text uppercase-text"> {{ guide.category.friendly_name }}</small>
+                    </a>
                     <br>
                     <br>
                     {% if guide.rating %}

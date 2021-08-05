@@ -14,6 +14,28 @@
         <div class="row">
             <div class="col text-center">
                 <h2 class="title-text bold-text">The Guides</h2>
+                {% for c in current_categories %}
+                    <h5>Current category:</h5>
+                    <a class="text-decoration-none" href="{% url 'guides' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white title-text rounded-2 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <br>
+                <p>{{ guides|length }} Guides{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}</p>
+                <div class="row mt-1 mb-2">
+                    <div class="col-12 order-md-last sort-box-container">
+                        <div class="sort-select-wrapper">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
                 <hr style="width: 60%" class="mx-auto">
             </div>
         </div>
@@ -32,8 +54,12 @@
                                 </a>
                             {% endif %}
                                 <div class="card-body">
-                                    <h4 class="card-title title-text">{{ guide.name }}</h5>
-                                    <small class="card-text uppercase-text">{{ guide.category }}</small>
+                                    <a href="{% url 'guide_detail' guide.id %}">
+                                        <h4 class="card-title title-text">{{ guide.name }}</h4>
+                                    </a>
+                                    <a href="{% url 'guides' %}?category={{ guide.category.name }}">
+                                        <i class="fas fa-tag"></i><small class="card-text uppercase-text"> {{ guide.category.friendly_name }}</small>
+                                    </a>
                                     <br>
                                     {% if guide.rating %}
                                         <small class="card-text">Rating: {{ guide.rating }} / 5</small>
@@ -44,6 +70,17 @@
                           </div>
                     </div>
                 {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-12 text-center py-5">
+                    <span class="small">
+                        <a href="{% url 'guides' %}">
+                            <button class=" btn btn-sm purple-btn all-guide-btn">
+                                Show all Guides
+                            </button>
+                        </a>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
