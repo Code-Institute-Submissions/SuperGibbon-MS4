@@ -23,9 +23,13 @@
                     <div class="col-md-6 col-lg-4 col-xl-3 pt-3 card-container">
                         <div class="card guide-card border-0 d-flex">
                             {% if guide.image %}
-                                <img src="{{ guide.image.url }}" class="card-img-top" alt="{{ guide.name }}">
+                                <a href="{% url 'guide_detail' guide.id %}">
+                                    <img src="{{ guide.image.url }}" class="card-img-top" alt="{{ guide.name }}">
+                                </a>
                             {% else%}
-                                <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ guide.name }}">
+                                <a href="{% url 'guide_detail' guide.id %}">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ guide.name }}">
+                                </a>
                             {% endif %}
                                 <div class="card-body">
                                     <h4 class="card-title title-text">{{ guide.name }}</h5>

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block content %}
+    <div class="col-12 col-md-10 offset-md-1">
+        <div class="row">
+            <div>
+                <h3 class="guide-detail-title title-text text-center">{{ guide.name }}</h3>
+            </div>
+            <div class="col-12 col-sm-6 guide-image-container">
+                <div class="guide-image">
+                    {% if guide.image %}
+                                <a href="{{ guide.image.url }}" target="_blank">
+                                    <img src="{{ guide.image.url }}" class="card-img-top" alt="{{ guide.name }}">
+                                </a>
+                            {% else%}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{ guide.name }}">
+                                </a>
+                            {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 guide-details-container">
+                <div class="guide-detail">
+                    <small class="uppercase-text">{{ guide.category }}</small>
+                    <br>
+                    <br>
+                    {% if guide.rating %}
+                        <small class="card-text">Rating: {{ guide.rating }} / 5</small>
+                    {% else %}
+                        <small class="card-text">No Rating yet</small>
+                    {% endif %}
+                    <br>
+                    <br>
+                    <p>{{ guide.desciption }}</p>
+                </div>
+            </div>
+            <div class="col-12 pt-5 text-center">
+                    <a href="">
+                        <button class="btn btn-lg btn-purple">Buy Premium Access<br><small>Only £5.99 for lifetime access to all guides</small></button>
+                    </a>
+            </div>
+            <div class="col-12 pt-3 text-center">
+                    <a href="{% url 'guides' %}">
+                        <button class="btn btn-lg btn-purple">Return to Guides</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

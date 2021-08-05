@@ -8,15 +8,16 @@ body {
     background-color: white;
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
+    padding-top: 172px;
 }
 
 .home-main  {
     text-align: center;
 }
 
-.header-container {
-    padding-top: 164px;
-}
+/*.message-container {
+    padding-top: 180px;
+}*/
 
 .GG_logo_header {
     max-height: 60px;
@@ -80,6 +81,23 @@ body {
     text-align: center;
 }
 
+.guide-details-container {
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+.guide-detail-title {
+    padding-bottom: 30px;
+}
+
+.guide-image-container {
+    padding-right: 50px;
+}
+
+.guide-image {
+    float: right;
+}
+
 .card-img-top {
     max-height: 200px;
     max-width: 200px;
@@ -116,5 +134,49 @@ body {
         right: 0;
         left: 0;
         z-index: 1030;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-top: 126px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding-top: 156px;
+    }
+}
+
+@media (max-width: 264px) {
+    body {
+        padding-top: 230px;
+    }
+}
+
+/* @media (max-width: 264px) {
+    .message-container {
+        padding-top: 230px;
+    }
+}
+*/
+
+@media (max-width: 574px) {
+    .guide-image {
+        float: none;
+        align-content: center;
+    }
+
+    .guide-image-container {
+        align-content: center;
+        text-align: center;
+        padding-right: 0px;
+    }
+
+    .guide-details-container {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
