@@ -6,10 +6,10 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'guides' %}" class="dropdown-item logo-text">All Guides</a>
-                <a href="" class="dropdown-item logo-text">PC Guides</a>
-                <a href="" class="dropdown-item logo-text">Playstation Guides</a>
-                <a href="" class="dropdown-item logo-text">Xbox Guides</a>
-                <a href="" class="dropdown-item logo-text">Nintendo Guides</a>
+                <a href="{% url 'guides' %}?category=pc" class="dropdown-item logo-text">PC Guides</a>
+                <a href="{% url 'guides' %}?category=playstation" class="dropdown-item logo-text">Playstation Guides</a>
+                <a href="{% url 'guides' %}?category=xbox" class="dropdown-item logo-text">Xbox Guides</a>
+                <a href="{% url 'guides' %}?category=nintendo" class="dropdown-item logo-text">Nintendo Guides</a>
             </div>
         </li>
     </ul>
