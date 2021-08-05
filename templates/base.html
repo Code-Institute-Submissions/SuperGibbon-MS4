@@ -40,7 +40,7 @@
             <div id="topnav" class="row topnav-area d-none d-lg-flex">
                 <div class="col-12 col-lg-4">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="text-center main-logo-link logo-text uppercase-text">Gibbons Guides</h2>
+                        <img class="GG_logo_header" src="media/GG_logo_60h.png" alt="Gibbons Guide Logo">
                     </a>
                 </div>
                 <div class="col-12 col-lg-4">
@@ -70,7 +70,7 @@
                                     {% if request.user.is_superuser %}
                                         <a href="" class="dropdown-item logo-text">Guide Management</a>
                                     {% endif %}
-                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="" class="dropdown-item logo-text">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item logo-text">Logout</a>
                                 {% else %}
                                     <a href="{% url 'account_signup' %}" class="dropdown-item logo-text">Register</a>
