@@ -57,6 +57,7 @@
                     </div>
                 {% endfor %}
             </div>
+            {% if search_term != 'None' %}
             <div class="row">
                 <div class="col-12 text-center py-5">
                     <span class="small">
@@ -68,6 +69,21 @@
                     </span>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
+    <div class="div back-to-top-container">
+        <button class="btt-link btn btn-md">
+            <i class=" fas fa-arrow-up title-text"></i><span> back to top</span>
+        </button>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}
