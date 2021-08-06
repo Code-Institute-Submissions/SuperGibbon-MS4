@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock%}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -15,7 +19,6 @@
             <div class="col-12 text-center">
                 <h1 class="title-text">Premium access</h1>
                 <p>Upgrade to premium to get access to all the guides and all future releases</p>
-                <br>
                 <p><i class="fas fa-check"></i> Access to all guides</p>
                 <p><i class="fas fa-check"></i> Lifetime membership, never pay again</p>
                 <p><i class="fas fa-check"></i> 100% AD free</p>
@@ -39,6 +42,7 @@
                             <div id="card-element"></div>
                             <div class="text-danger" id="card-errors" role="alert"></div>
                         </fieldset>
+                        <br>
                         <button class="btn-purple btn" id="submit-button">
                             <span>Complete order</span>
                         </button>
@@ -52,4 +56,11 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
