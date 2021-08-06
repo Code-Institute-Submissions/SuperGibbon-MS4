@@ -172,6 +172,8 @@ body {
     color: white;
 }
 
+/* Media Queries */
+
 @media (min-width: 992px) {
     .fixed-top-desktop {
         position: fixed;
