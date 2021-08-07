@@ -10,7 +10,7 @@ class Order(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
-                                        null=False, default=0)
+                                      null=False, default=0)
 
     def _generate_order_number(self):
         return uuid.uuid4().hex.upper()
