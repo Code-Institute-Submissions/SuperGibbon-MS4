@@ -19,13 +19,10 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            print("Form valid")
             order = order_form.save()
-            return redirect(reverse('checkout_success', 
-                                     args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
-            print("Form invalid")
-            print(form.errors)
             messages.error(request, 'There was an error with your form. \
                 Please check all the info is correct')
     else:
