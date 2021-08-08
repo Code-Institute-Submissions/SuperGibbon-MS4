@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from .models import Guide, Category
@@ -28,8 +28,6 @@ def all_guides(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request,
-                               "You didn't enter anything in the search box")
                 return redirect(reverse('guides'))
 
             queries = Q(name__icontains=query) | Q(desciption__icontains=query)
@@ -65,10 +63,14 @@ def guide_detail(request, guide_id):
     return render(request, 'guides/guide_detail.html', context)
 
 
+@login_required
 def add_guide(request):
     """
     Add guides to website
     """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = GuideForm(request.POST, request.FILES)
         if form.is_valid():
@@ -86,10 +88,14 @@ def add_guide(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_guide(request, guide_id):
     """
     Edit a guide
     """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     guide = get_object_or_404(Guide, pk=guide_id)
     if request.method == 'POST':
         form = GuideForm(request.POST, request.FILES, instance=guide)
@@ -108,10 +114,14 @@ def edit_guide(request, guide_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_guide(request, guide_id):
     """
     Delete guide from store
     """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     guide = get_object_or_404(Guide, pk=guide_id)
     guide.delete()
     return redirect(reverse('guides'))
