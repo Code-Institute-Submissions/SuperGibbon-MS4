@@ -52,6 +52,12 @@
                                     {% else %}
                                         <small class="card-text">No Rating yet</small>
                                     {% endif %}
+                                    {% if request.user.is_superuser %}
+                                        <small>
+                                            <a href="{% url 'edit_guide' guide.id %}">Edit</a> |
+                                            <a href="{% url 'delete_guide' guide.id %}" class="text-danger">Delete</a>
+                                        </small>
+                                    {% endif %}
                                 </div>
                           </div>
                     </div>

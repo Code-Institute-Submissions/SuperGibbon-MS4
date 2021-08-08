@@ -72,8 +72,8 @@ def add_guide(request):
     if request.method == 'POST':
         form = GuideForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect(reverse('add_guide'))
+            guide = form.save()
+            return redirect(reverse('guide_detail', args=[guide.id]))
     else:
         form = GuideForm
 
@@ -106,3 +106,12 @@ def edit_guide(request, guide_id):
     }
 
     return render(request, template, context)
+
+
+def delete_guide(request, guide_id):
+    """
+    Delete guide from store
+    """
+    guide = get_object_or_404(Guide, pk=guide_id)
+    guide.delete()
+    return redirect(reverse('guides'))
