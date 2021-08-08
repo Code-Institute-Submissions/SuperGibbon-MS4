@@ -1,8 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.conf import settings
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 from .forms import OrderForm
 from .models import Order
@@ -43,6 +41,7 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
+                orders = profile.orders.all()
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -58,6 +57,7 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     context = {
+        'orders': orders,
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,

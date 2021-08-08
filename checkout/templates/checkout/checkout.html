@@ -14,48 +14,68 @@
 {% endblock%}
 
 {% block content %}
-    <div class="checkout-container col">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="title-text">Premium access</h1>
-                <p>Upgrade to premium to get access to all the guides and all future releases</p>
-                <p><i class="fas fa-check"></i> Access to all guides</p>
-                <p><i class="fas fa-check"></i> Lifetime membership, never pay again</p>
-                <p><i class="fas fa-check"></i> 100% AD free</p>
-                <h5>Buy now for only £5.99</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8 offset-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-                <br>
-                {% if user.is_authenticated %}
-                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                        {% csrf_token %}
-                        <fieldset>
-                            <legend>Your Details</legend>
-                            {{ order_form.full_name | as_crispy_field }}
-                            {{ order_form.email | as_crispy_field }}
-                        </fieldset>
-                        <br>
-                        <fieldset>
-                            <legend>Payment</legend>
-                            <div id="card-element"></div>
-                            <div class="text-danger" id="card-errors" role="alert"></div>
-                        </fieldset>
-                        <br>
-                        <button class="btn-purple btn" id="submit-button">
-                            <span>Complete order</span>
-                        </button>
-                    </form>
-                {% else %}
-                    <h3 class="title-text">Ready to buy Premium? You need to register for the site first</h3>
-                    <a href="{% url 'account_signup' %}">
-                        <button class="btn btn-lg btn-purple">Register Here</button>
+    {% if orders %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="title-text">
+                        You're already premium
+                    </h2>
+                    <p>
+                        You'd don't need to be here
+                    </p>
+                    <a href="{% url 'guides' %}">
+                        <button class="btn btn-purple">Go to the guides</button>
                     </a>
-                {% endif %}
+                </div>
             </div>
         </div>
-    </div>
+    {% else %}
+        <div class="checkout-container col">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="title-text">Premium access</h1>
+                    <p>Upgrade to premium to get access to all the guides and all future releases</p>
+                    <p><i class="fas fa-check"></i> Access to all guides</p>
+                    <p><i class="fas fa-check"></i> Lifetime membership, never pay again</p>
+                    <p><i class="fas fa-check"></i> 100% AD free</p>
+                    <h5>Buy now for only £5.99</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 offset-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                    <br>
+                    {% if user.is_authenticated %}
+                        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>Your Details</legend>
+                                {{ order_form.full_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                            </fieldset>
+                            <br>
+                            <fieldset>
+                                <legend>Payment</legend>
+                                <div id="card-element"></div>
+                                <div class="text-danger" id="card-errors" role="alert"></div>
+                            </fieldset>
+                            <br>
+                            <button class="btn-purple btn" id="submit-button">
+                                <span>Complete order</span>
+                            </button>
+                        </form>
+                    {% else %}
+                        <div class="col-12 text-center">
+                            <h3 class="title-text">Ready to buy Premium? You need to register for the site first</h3>
+                            <a href="{% url 'account_signup' %}">
+                                <button class="btn btn-lg btn-purple">Register Here</button>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block postloadjs %}

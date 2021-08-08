@@ -4,6 +4,7 @@ from django.db.models import Q
 
 from .models import Guide, Category
 from .forms import GuideForm
+from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -50,9 +51,15 @@ def guide_detail(request, guide_id):
     """ view to return a page showing individual guide details """
 
     guide = get_object_or_404(Guide, pk=guide_id)
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        orders = profile.orders.all()
+    else:
+        orders = False
 
     context = {
         'guide': guide,
+        'orders': orders,
     }
 
     return render(request, 'guides/guide_detail.html', context)
@@ -67,8 +74,6 @@ def add_guide(request):
         if form.is_valid():
             form.save()
             return redirect(reverse('add_guide'))
-        else:
-            messages.error(request, 'Failed to add guide, please check form is valid')
     else:
         form = GuideForm
 
@@ -76,6 +81,28 @@ def add_guide(request):
     template = 'guides/add_guide.html'
     context = {
         'form': form
+    }
+
+    return render(request, template, context)
+
+
+def edit_guide(request, guide_id):
+    """
+    Edit a guide
+    """
+    guide = get_object_or_404(Guide, pk=guide_id)
+    if request.method == 'POST':
+        form = GuideForm(request.POST, request.FILES, instance=guide)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('guide_detail', args=[guide.id]))
+    else:
+        form = GuideForm(instance=guide)
+
+    template = 'guides/edit_guide.html'
+    context = {
+        'form': form,
+        'guide': guide,
     }
 
     return render(request, template, context)

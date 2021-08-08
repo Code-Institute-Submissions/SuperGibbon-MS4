@@ -46,9 +46,14 @@
                 </div>
             </div>
             <div class="col-12 pt-5 text-center">
+                {% if orders %}
+                    <h3 class="title-text"> The Guide</h3>
+                    <p>{{ guide.guide_content }}</p>
+                {% else%}
                     <a href="{% url 'checkout' %}">
                         <button class="btn btn-lg btn-purple">Buy Premium Access<br><small>Only £5.99 for lifetime access to all guides</small></button>
                     </a>
+                {% endif %}
             </div>
             <div class="col-12 pt-3 text-center">
                     <a href="{% url 'guides' %}">
