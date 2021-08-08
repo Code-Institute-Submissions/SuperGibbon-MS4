@@ -27,12 +27,23 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <br>
-                    <button class="btn btn-purple">Update Info</button>
+                    <button class="btn btn-purple mb-3">Update Info</button>
                 </form>
             </div>
             <div class="col-12 col-lg-6">
-                <p>Orders</p>
-                {{ orders }}
+                {% if orders %}
+                    <h3 class="title-text">You are a Premium Member</h3>
+                    <p>enjoy access to all of the below</p>
+                    <p><i class="fas fa-check"></i> Access to all guides</p>
+                    <p><i class="fas fa-check"></i> Lifetime membership, never pay again</p>
+                    <p><i class="fas fa-check"></i> 100% AD free</p>
+                {% else %}
+                    <h3 class="title-text">Want to get access to our guides?</h3>
+                    <br>
+                    <a href="{% url 'checkout' %}">
+                        <button class="btn btn-lg btn-purple">Buy Premium Access<br><small>Only £5.99 for lifetime access to all guides</small></button>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
