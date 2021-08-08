@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from guides.models import Guide
 
 # Create your views here.
 
@@ -6,4 +7,10 @@ from django.shortcuts import render
 def index(request):
     """ view to return index page """
 
-    return render(request, 'home/index.html')
+    guides = Guide.objects.all()
+    template = 'home/index.html'
+    context = {
+        'guides': guides
+    }
+
+    return render(request, template, context)
