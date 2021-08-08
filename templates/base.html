@@ -69,7 +69,7 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="" class="dropdown-item logo-text">Guide Management</a>
+                                        <a href="{% url 'add_guide' %}" class="dropdown-item logo-text">Guide Management</a>
                                     {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item logo-text">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item logo-text">Logout</a>
@@ -92,39 +92,12 @@
                 </nav>
             </div>
         </header>
-        
-        {% if messages %}
-        <!--
-            <div class="message-container">
-                {% for message in messages %}
-                    {% with message.level as level %}
-                        {% if level == 40 %}
-                            {% include 'includes/toasts/toast_error.html' %}
-                        {% elif level == 30 %}
-                            {% include 'includes/toasts/toast_warning.html' %}
-                        {% elif level == 25 %}
-                            {% include 'includes/toasts/toast_success.html' %}
-                        {% else %}
-                            {% include 'includes/toasts/toast_info.html' %}
-                        {% endif %}
-                    {% endwith %}
-                {% endfor %}
-            </div>
-        -->
-        {% endif %}
 
         {% block page_header %}
-            
         {% endblock %}
 
         {% block content%}
         {% endblock%}
-
-        {% block postloadjs %}
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
-        {% endblock %}
         
     </body>
 </html>

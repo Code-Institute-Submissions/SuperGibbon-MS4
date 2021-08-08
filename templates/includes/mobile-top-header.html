@@ -31,7 +31,7 @@
       <div class="dropdown-menu border-0 logo-text" aria-labelledby="user-options">
           {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
-                  <a href="{% url 'account_logout' %}" class="dropdown-item logo-text">Guide Management</a>
+                  <a href="{% url 'add_guide' %}" class="dropdown-item logo-text">Guide Management</a>
               {% endif %}
               <a href="" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item logo-text">Logout</a>

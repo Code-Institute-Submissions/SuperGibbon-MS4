@@ -62,6 +62,16 @@ def add_guide(request):
     """
     Add guides to website
     """
+    if request.method == 'POST':
+        form = GuideForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('add_guide'))
+        else:
+            messages.error(request, 'Failed to add guide, please check form is valid')
+    else:
+        form = GuideForm
+
     form = GuideForm()
     template = 'guides/add_guide.html'
     context = {
