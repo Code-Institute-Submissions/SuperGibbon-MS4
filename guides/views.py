@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Guide, Category
+from .forms import GuideForm
 
 # Create your views here.
 
@@ -25,7 +27,8 @@ def all_guides(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter anything in the search box")
+                messages.error(request,
+                               "You didn't enter anything in the search box")
                 return redirect(reverse('guides'))
 
             queries = Q(name__icontains=query) | Q(desciption__icontains=query)
@@ -53,3 +56,16 @@ def guide_detail(request, guide_id):
     }
 
     return render(request, 'guides/guide_detail.html', context)
+
+
+def add_guide(request):
+    """
+    Add guides to website
+    """
+    form = GuideForm()
+    template = 'guides/add_guide.html'
+    context = {
+        'form': form
+    }
+
+    return render(request, template, context)

@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.all_guides, name='guides'),
-    path('<guide_id>', views.guide_detail, name='guide_detail'),
+    path('<int:guide_id>/', views.guide_detail, name='guide_detail'),
+    path('add/', views.add_guide, name='add_guide'),
 ]

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from .forms import OrderForm
 from .models import Order
@@ -11,6 +13,9 @@ import stripe
 
 
 def checkout(request):
+    """
+    handle checkout
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -62,6 +67,9 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """
+    Handle successful checkout
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
@@ -76,10 +84,6 @@ def checkout_success(request, order_number):
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
-
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
 
     template = 'checkout/checkout_success.html'
     context = {

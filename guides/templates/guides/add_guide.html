@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block content %}
+    <div class="container checkout-container col">
+        <div class="row">
+            <div class="col-12 col-12 col-md-6">
+                <h1 class="title-text">Guide Management</h1>
+                <h4 class="title-text">Add a Guide</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_guide' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-purple mt-2" href="{% url 'guides' %}">
+                            Cancel
+                        </a>
+                        <button class="btn btn-purple mt-2" type="submit">
+                            Add Guide
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
