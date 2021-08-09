@@ -1,0 +1,1 @@
+web: gunicorn gibbons_guides.wsgi:application
