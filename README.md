@@ -66,6 +66,74 @@ Owner
 
 ### User Story testing
 
+User
+1. See quickly what the site is about from the main page
+
+    1. Main page has info about site, membership and a few guides to show what is available very quickly
+
+    ![Main Page](assets/images/readmeimages/homepage.png)
+
+
+2. Navigate throughout site easier and intuitively
+
+    1. Nav bar is avilable throughout site
+
+    ![Navbar](assets/images/readmeimages/navigation.png)
+
+
+3. See a full list of guides available easily if needed
+
+    1. Guides page shows full list of guides
+
+    ![Guides Page](assets/images/readmeimages/guides.png)
+
+
+4. Search and filter guides the guides to find a certain guide or platform
+
+    1. Search bar is avilable and guides filtered when searched
+
+    ![Search](assets/images/readmeimages/search.png)
+
+
+5. See info about specific guides
+
+    1. Each guide has a details page to give more info
+
+    ![Guide Details](assets/images/readmeimages/guidedetail.png)
+
+
+6. Purchase a membership easily
+
+    1. There are buttons on guide details pages and profile pages to take user to checkout
+
+    ![Buy Button](assets/images/readmeimages/purchase1.png)
+
+    2. Checkout form is simple with easy to complete form
+
+    ![Checkout](assets/images/readmeimages/purchase2.png)
+
+
+7. See a profile page that confirms membership status
+
+    1. Membership status is shown on the profile page
+
+    ![Status](assets/images/readmeimages/profile.png)
+
+
+
+Owner
+1. Perform CRUD on guides
+    1. This is avilable via buttons on guides and guide management
+
+
+2. Use site elements to encourage sign up
+    1. Buttons on multiple pages encourage sign up for access
+
+
+3. Receive payments for signups
+    1. This can be seen on stripe website
+
+
 
 ### Feature testing
 
@@ -105,6 +173,8 @@ Owner
 | Guide details - premium | Load page, guide content visible | Page should have guide content div visible | Pass |
 
 ### Owner
+| Feature | Action taken  | Expected result | Pass/Fail |
+| :--- | :--- | :--- | :--- | 
 | Admin | Access admin pages url | Admin pages loads | Pass |
 | Guide details | Edit and delete buttons visible | Buttons visible for edit/delete | Pass |
 | Guide | Edit and delete buttons visible | Buttons visible for edit/delete | Pass |
@@ -142,6 +212,7 @@ The project has been deployed using Heroku
 
 - A few acknowledgements here that I would have been stuck without;
 
-Images for guides were taken from [Game](https:game.co.uk)
+1. Images for guides were taken from [Game](https:game.co.uk)
+2. Some features were adapted from the Boutique Ado project so there maybe correlation
 
 - Code Institute, Tutors and my Mentor were all a big part of making this project possible
