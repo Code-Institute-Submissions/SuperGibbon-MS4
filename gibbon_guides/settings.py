@@ -120,16 +120,14 @@ WSGI_APPLICATION = 'gibbon_guides.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://bmktarlodievon:c51ec55e7b3c8deb8b8576c3c2ca2608461fd48b9e39b97bfc41707af262d5d1@ec2-54-216-17-9.eu-west-1.compute.amazonaws.com:5432/d9691u7fnubfpd')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
 
 
 # Password validation

@@ -55,7 +55,7 @@
                                     {% if request.user.is_superuser %}
                                         <small>
                                             <a href="{% url 'edit_guide' guide.id %}">Edit</a> |
-                                            <a onclick="return confirm('Are you sure you want to delete this guides?')" href="{% url 'delete_guide' guide.id %}"></a>
+                                            <a class="text-danger" href="{% url 'delete_guide' guide.id %}">Delete</a>
                                         </small>
                                     {% endif %}
                                 </div>
