@@ -1,104 +1,147 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Gibbons Guides
 
-Welcome SuperGibbon,
+This project is designed to be a webstore for anyone that wants guides to some of their favourite computer guides, users can login and pay a one off fee to get access to the guides forever.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## UX
 
-## Gitpod Reminders
+Design
+It has been designed to be simple to use but still pleasing to the user, features should be easy to reach and nothing should be more than a few clicks away
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Colours
+When coming up with the colours I decided on using white/black/pusple(#5312d6). The choice was made to not clash with the most recognisible colours in gaming (Playstation - Blue, Xbox - Red, Nintendo - Red). By chosing a colour that did not show a brand bias it should show users notice that multiple platforms are supported and not just focusing on one.
 
-`python3 -m http.server`
+Wireframes
+Wireframes were designed using Miro, they can be found here
+[Wireframes](https://miro.com/app/board/o9J_l34w-Cg=/)
 
-A blue button should appear to click: _Make Public_,
+## User stories
 
-Another blue button should appear to click: _Open Browser_.
+User
+1. See quickly what the site is about from the main page
+2. Navigate throughout site easier and intuitively
+3. See a full list of guides available easily if needed
+4. Search and filter guides the guides to find a certain guide or platform
+5. See info about specific guides
+6. Purchase a membership easily
+7. See a profile page that confirms membership status
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Owner
+1. Perform CRUD on guides
+2. Use site elements to encourage sign up
+3. Receive payments for signups 
 
-A blue button should appear to click: _Make Public_,
+## Existing Features
 
-Another blue button should appear to click: _Open Browser_.
+- Home page with site info and links to guides
+- Navbar with navigation around websites
+- Guides list in database
+- CRUD functionality on guides
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Future Features
 
-To log into the Heroku toolbelt CLI:
+- Guide previews on guide detail pages so users can see a taste of what they are buying
+- Guide content
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Tech used
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- [JQuery](https://jquery.com)
+- The project uses **JQuery** as part of Bootstrap components
 
-------
+- [GoogleFonts](https://fonts.google.com/)
+- The project uses **GoogleFonts** to provide the fonts used on the pages
 
-## Release History
+- [Django](https://www.djangoproject.com/)
+- **Django** frameworks for website
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- [Stripe](https://stripe.com/gb)
+- **Stripe** is used for payments
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- [AWS](https://aws.amazon.com/)
+- **AWS** is used for static/media file storage
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- [Bootstrap](https://getbootstrap.com/)
+- **Bootstrap** for layout and components
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Testing
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### User Story testing
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Feature testing
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### User
+| Feature | Action taken  | Expected result | Pass/Fail |
+| :--- | :--- | :--- | :--- |    
+| Navbar | Click Logo | Takes me to homepage | Pass |
+| Navbar | Click My Account | Dropdown account options | Pass |
+| Navbar | Click View Our Guides | Dropdown guies filter | Pass |
+| Navbar | Click filter on guide dropdown | Take to guide page with filter | Pass on all |
+| Navbar | Search bar enter search | Take to guide page with search results | Pass |
+| Navbar - mobile | Collapsables work in mobile view | Dropdowns to open close on touch | Pass on all |
+| Navbar - mobile | All above tests work on collapsable links | As above | Pass |
+| Index | Click The Guides button | Take to guides page without filters | Pass |
+| Index | Click guide images | Take to guide details page on image | Pass |
+| Guides | Click image or title of guide | Take to guide detail page | Pass |
+| Guides | Click platform tag under guide | Filter guides by that platform | Pass on all platforms |
+| Guides | Click back to top button | Take back to top of page | Pass |
+| Guides - when filtered | Click show all guides button | Back to guides page with no filters | Pass |
+| Register | Sign up | Taken to confirm email page - email sent | Pass |
+| Register | Confirm emaill adress | See confirmation of email page | Pass |
+| Login | Successful login | Taken to home page, account dropdown updated | Pass |
+| Logout | Successful logout | Taken to home page, account dropdown updated | Pass |
+| Account - non premium | My profile from dropdown | Profile page with purchase button | Pass |
+| Account - premium | My profile from dropdown | Profile page with premium confirmation | Pass |
+| Account | Update info button clicked | info update on page | Fail - see bugs |
+| Account - non premium | Click buy access button | Checkout page loads | Pass |
+| Checkout | Error checkout with stripe | Warning about card info wrong | Pass |
+| Checkout | Successful checkout | Taken to checkout success page | Pass |
+| Checkout - premium user | Enter url to get to checkout | Page loads with a already member prompt and return to guides button | Pass |
+| Checkout - premium user | Enter url to get to checkout click button | Take to guides page without filters | Pass |
+| Checkout success | Click retrun to guides button | return to guides page | Pass |
+| Guide details | Click image | image loads in new tab | Pass |
+| Guide details | Click platform tag | go to guides page and Filter guides by that platform | Pass |
+| Guide details | Click return to guides button | Take to guides page without filters | Pass |
+| Guide details - non premium | Click buy access button | Checkout page loads | Pass |
+| Guide details - premium | Load page, guide content visible | Page should have guide content div visible | Pass |
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Owner
+| Admin | Access admin pages url | Admin pages loads | Pass |
+| Guide details | Edit and delete buttons visible | Buttons visible for edit/delete | Pass |
+| Guide | Edit and delete buttons visible | Buttons visible for edit/delete | Pass |
+| Navbar | Click my account button | Guide management tab available in dropdown | Pass |
+| Guide management | Add new guide info | New guide added to guides, redirect to guide detail for added product | Pass |
+| Guide management | Edit button pressed | guide form page loaded, guide can be edited | Pass |
+| Guide management | Delete button pressed | guide deleted from guides, redirect to guides page | Pass |
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Bugs
+1. Profile information update button causes 500 error - I have hidden/disabled for now, will be a need to be keep in later release, info is populated in profile when successful purchase made so data is stored
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Deployment
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The project has been deployed using Heroku
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+1. Create a local requirements.txt("pip3 freeze -- local > requirements.txt" in CLI) and Procfile("echo web: python app.py > Procfile" in CLI) ready to use with Heroku
+2. Login to Heroku (sign up if not already a member)
+3. Click on new and select Create new app
+4. Your new app, must be unique and select region closest to you location
+5. Connect Heroku app to GitHub, click the deploy tab of your app and click GitHub as your deploy method
+6. Make sure you GitHub profile is display (if not you will need to log in to GitHub)
+7. Next to your GitHub profile, search for your repository name and click search
+8. Once repo found click Connect
+9. At the top of the page go to Settings
+10. Click reveal Config Vars
+11. You will need to fill in your enviorment variables here, usually created in a env.py file, this file should not be part of your repo (add to your .gitignore)
+12. Go back to the deploy tab
+13. Click Enable automatic deployment
+14. Click deploy branch
+15. Once successfully deployed you will have a link to view your app
+16. This will update whenever you push changes to GitHub 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+### Acknowledgements
 
-## FAQ about the uptime script
+- A few acknowledgements here that I would have been stuck without;
 
-**Why have you added this script?**
+Images for guides were taken from [Game](https:game.co.uk)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- Code Institute, Tutors and my Mentor were all a big part of making this project possible
