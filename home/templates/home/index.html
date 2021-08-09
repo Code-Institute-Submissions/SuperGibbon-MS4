@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-12">
                 <h3 class="title-text">Here are some of the guides</h3>
-                {% for guide in guides|slice:"0:5" %}
+                {% for guide in guides|slice:"0:3" %}
                     <a class="home-image" href="{% url 'guide_detail' guide.id %}">
                         <img src="{{ guide.image_url }}" alt="{{ guide.name }}">
                     </a>

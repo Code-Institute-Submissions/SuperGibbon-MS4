@@ -1,0 +1,35 @@
+[
+    {
+        "pk": 1,
+        "model": "guides.category",
+        "fields": {
+            "name": "pc",
+            "friendly_name": "PC"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "guides.category",
+        "fields": {
+            "name": "playstation",
+            "friendly_name": "Playstation"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "guides.category",
+        "fields": {
+            "name": "microsoft",
+            "friendly_name": "Microsoft"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "guides.category",
+        "fields": {
+            "name": "nintendo",
+            "friendly_name": "Nintendo"
+        }
+    }
+]
+

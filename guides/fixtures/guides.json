@@ -1,0 +1,212 @@
+[
+	{
+		"pk": 1,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340155",
+			"name": "Spiderman - Miles Morales", 
+			"desciption": "Collectable guide to the newest Spiderman game, find everything you need to unlock all of Spidermans secrets costumes", 
+			"category": 2, 
+			"rating": 4.6, 
+			"image_url": "https://www.game.co.uk/en/marvels-spider-man-miles-morales-2623955", 
+			"image": "749637_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 2,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340166",
+			"name": "Sackboy: A Big Adventure", 
+			"desciption": "Level guide to help you find all those secrets in every world",  
+			"category": 2, 
+			"rating": 4.2, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/7/4/9/6/749625_gen_a.png", 
+			"image": "749625_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 3,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340177",
+			"name": "Ghost of Tshushima", 
+			"desciption": "Find all those clothing items, swords and paints to customise Jin to your liking, maps and pictures included",  
+			"category": 2, 
+			"rating": 4.8, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/7/1/1/9/711945_ps4_a.png", 
+			"image": "711945_ps4_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 4,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340188",
+			"name": "Death Stranding", 
+			"desciption": "A mission guide to help you beat every mission with top marks and get all trophies for the game",  
+			"category": 2, 
+			"rating": 3.7, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/5/6/2/9/562932_ps4_a.png", 
+			"image": "562932_ps4_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 5,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340199",
+			"name": "Grand Theft Auto: San Andreas", 
+			"desciption": "A guide for 100% completion of this classic, all collectibles included",  
+			"category": 1, 
+			"rating": 4.7, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/5/5/0/3/550388_pcw_a.png", 
+			"image": "550388_pcw_a.png",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 6,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340211",
+			"name": "Dragon Age Inquistion", 
+			"desciption": "Maps and guides to all areas of the games, a complete roadmap for all missions and choices, get the ending you want",  
+			"category": 1, 
+			"rating": 3.8, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/4/4/5/5/445566_pcw_a.png", 
+			"image": "445566_pcw_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 7,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340222",
+			"name": "Star Wars: Knights of the Old Republic II", 
+			"desciption": "A walkthrough for this epic RPG, play the way you want by knowing what your choices mean and planning ahead of time with our guide to 100% completion",  
+			"category": 1, 
+			"rating": 4.9, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/4/6/1/2/461290_pcw_a.png", 
+			"image": "461290_pcw_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 8,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340233",
+			"name": "The Legend of Zelda: Skyward Sword HD", 
+			"desciption": "Know everything about this remake of the classic Zelda game, maps, item guides and story mission pointers to get the most of this game",  
+			"category": 4, 
+			"rating": 4.1, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/8/0/4/7/804719_gen_a.png", 
+			"image": "804719_gen_a.png",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 9,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340244",
+			"name": "Animal Crossing: New Horizons", 
+			"desciption": "This guide will help you find every collectible, every gift, every creature, every fossil. Everything you need to truly get the most out of your piece of paradise", 
+			"category": 4, 
+			"rating": 4.8, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/7/3/6/7/736752_gen_a.png", 
+			"image": "736752_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 10,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340255",
+			"name": "Pikmin 3 Deluxe", 
+			"desciption": "Pikmin are small and difficult to find and tame, this guide will do away with all the hussle and show you how to get and use every type of Pikmin easily and efficiently",  
+			"category": 4, 
+			"rating": 4.1, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/7/9/9/8/799864_gen_a.png", 
+			"image": "799864_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 11,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340266",
+			"name": "Super Mario 3d World", 
+			"desciption": "This 3D Mario game introduces a lot of new mechanics and collectibles, this guide will help you get the best from everything this game has and help you find every last star",  
+			"category": 4, 
+			"rating": 3.9, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/8/0/0/9/800995_gen_a.png", 
+			"image": "800995_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 12,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340277",
+			"name": "Gears of War 5", 
+			"desciption": "This Xbox exclusive epic now has an ultimate guide, find all those collectibles, antique weapons and skins to make Gears of War 5 the best it can be",  
+			"category": 3, 
+			"rating": 4.6, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/7/2/9/4/729400_xb1_a.png", 
+			"image": "729400_xb1_a.png",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 13,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340288",
+			"name": "The Medium", 
+			"desciption": "This psychologic horror game puts you in 2 places at once, with collectibles in both worlds,you won't miss a thing with this guide",  
+			"category": 3, 
+			"rating": 4.0, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/8/0/9/7/809786_gen_a.png", 
+			"image": "809786_gen_a.png",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 14,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340299",
+			"name": "GreedFall", 
+			"desciption": "The excellent RPG of the tale of one persons story to save the new world is vast and scary, this guide can help you find your way, also includes a levelling and skills guide to get the most out of your character",
+			"category": 3, 
+			"rating": 4.1, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/8/0/6/3/806376_gen_a.png", 
+			"image": "806376_gen_a.jpg",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	},
+	{
+		"pk": 15,
+		"model": "guides.guide",
+		"fields": {
+			"sku": "pp5001340311",
+			"name": "Chaosbane", 
+			"desciption": "This guide for warhammer premium ARPG will guide you through your story of the vast universe, with tales of lore and skills the guide will help you better understand your place in the world and become the ultimate champion to save it",  
+			"category": 3, 
+			"rating": 4.4, 
+			"image_url": "https://cdn.game.net/image/upload/c_fill,dpr_1.0,f_auto,h_200,q_auto/v1/game_img/ml2/8/0/2/6/802660_gen_a.png", 
+			"image": "802660_gen_a.png",
+			"guide_content": "Guide content to be added later, due to time constraints did not populate for the project"
+			}
+	}
+]
