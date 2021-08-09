@@ -1,1 +1,1 @@
-web: gunicorn gibbons_guides.wsgi:application
+web: gunicorn gibbon_guides.wsgi:application
